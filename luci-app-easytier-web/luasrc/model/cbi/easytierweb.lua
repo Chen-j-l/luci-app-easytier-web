@@ -2,7 +2,7 @@ local http = luci.http
 local nixio = require "nixio"
 
 m = Map("easytierweb")
-m:section(SimpleSection).template  = "easytier/easytierweb_status"
+m:section(SimpleSection).template  = "easytierweb/easytierweb_status"
 
 s=m:section(TypedSection, "easytierweb", translate("EasyTier Web Server Configuration"))
 s.addremove=false
@@ -58,7 +58,7 @@ weblog:value("trace", translate("Trace"))
 
 -- 日志 tab - 使用 HTM 模板展示
 logs = s:taboption("logs", DummyValue, "logs", translate("logs"))
-logs.template = "easytier/easytierweb_log"
+logs.template = "easytierweb/easytierweb_log"
 logs.rawhtml = true
 
 return m

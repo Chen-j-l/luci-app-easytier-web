@@ -10,15 +10,14 @@ include $(TOPDIR)/rules.mk
 PKG_VERSION:=$(or $(EASYTIER_VERSION),2.5.0)
 PKG_RELEASE:=2
 
-LUCI_TITLE:=LuCI support for EasyTier
-LUCI_DEPENDS:=+easytier +luci-compat
+LUCI_TITLE:=LuCI support for EasyTier Web Console
+LUCI_DEPENDS:=+easytier-web +luci-compat
 LUCI_PKGARCH:=all
 
-PKG_NAME:=luci-app-easytier
+PKG_NAME:=luci-app-easytier-web
 
 define Package/$(PKG_NAME)/conffiles
-/etc/config/easytier
-/etc/easytier/
+/etc/config/easytierweb
 endef
 
 include $(TOPDIR)/feeds/luci/luci.mk

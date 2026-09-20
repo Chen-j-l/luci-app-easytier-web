@@ -1,4 +1,3 @@
-
 config easytierweb
 	option enabled '0'
 	option db_path '/etc/easytier/et.db'
@@ -7,4 +6,3 @@ config easytierweb
 	option api_port '11211'
 	option html_port '11211'
 	option weblog 'off'
-

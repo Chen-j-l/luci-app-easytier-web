@@ -1,7 +1,7 @@
 include $(TOPDIR)/rules.mk
 -include $(dir $(lastword $(MAKEFILE_LIST)))../version.mk
 
-PKG_NAME:=easytier-web-console
+PKG_NAME:=easytier-web
 PKG_VERSION:=$(or $(EASYTIER_VERSION),2.5.0)
 
 ifeq ($(ARCH),mipsel)
