@@ -20,13 +20,13 @@ get_tz() {
 start_web() {
 	webbin="/usr/bin/easytier-web"
 	if [ ! -f "$webbin" ] ; then
-        echo "$(date '+%Y-%m-%d %H:%M:%S') easytierweb : $webbin 程序文件不存在" >>/tmp/easytierweb.log
-        return 1
-    fi
-    if [ ! -x "$webbin" ] ; then
-        chmod +x "$webbin"
-    fi
-    
+		echo "$(date '+%Y-%m-%d %H:%M:%S') easytierweb : $webbin 程序文件不存在" >>/tmp/easytierweb.log
+		return 1
+	fi
+	if [ ! -x "$webbin" ] ; then
+		chmod +x "$webbin"
+	fi
+	
 	echo "$(date '+%Y-%m-%d %H:%M:%S') easytierweb : 开始启动${webbin} " >>/tmp/easytierweb.log
 	db_path="$(uci -q get easytierweb.@easytierweb[0].db_path)"
 	web_protocol="$(uci -q get easytierweb.@easytierweb[0].web_protocol)"
@@ -91,9 +91,9 @@ start_service() {
 stop_service() {
 	echo "stop.."
 	if [ "$(uci -q get easytierweb.@easytierweb[0].enabled)" = "0" ] ; then
-    	ps | grep 'easytier-web' | grep -v grep | awk '{print $1}' | xargs kill >/dev/null 2>&1
-    	ps | grep 'easytier-web' | grep -v grep | awk '{print $1}' | xargs kill -9 >/dev/null 2>&1
-    	echo "$(date '+%Y-%m-%d %H:%M:%S') easytierweb : 已停止！ " >>/tmp/easytierweb.log
+		ps | grep 'easytier-web' | grep -v grep | awk '{print $1}' | xargs kill >/dev/null 2>&1
+		ps | grep 'easytier-web' | grep -v grep | awk '{print $1}' | xargs kill -9 >/dev/null 2>&1
+		echo "$(date '+%Y-%m-%d %H:%M:%S') easytierweb : 已停止！ " >>/tmp/easytierweb.log
 	fi
 }
 
@@ -105,6 +105,6 @@ reload_service() {
 service_triggers() {
 	procd_add_reload_trigger "easytierweb"
 	#如果WAN网络接口上线则触发重新启动easytier
-        procd_add_interface_trigger "interface.*.up" wan /etc/init.d/easytierweb reload
+	procd_add_interface_trigger "interface.*.up" wan /etc/init.d/easytierweb reload
 }
 
