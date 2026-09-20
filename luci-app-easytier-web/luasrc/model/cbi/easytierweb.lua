@@ -4,7 +4,7 @@ local nixio = require "nixio"
 m = Map("easytierweb")
 m:section(SimpleSection).template  = "easytierweb/easytierweb_status"
 
-s=m:section(TypedSection, "easytierweb", translate("EasyTier Web Server Configuration"))
+s=m:section(TypedSection, "easytierweb", translate("EasyTier Web Console Configuration"))
 s.addremove=false
 s.anonymous=true
 s:tab("general", translate("Settings"))
