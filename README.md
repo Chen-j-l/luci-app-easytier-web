@@ -9,9 +9,3 @@
   - sdk 可根据需要填写，其中`SNAPSHOT`后缀的是apk安装包，`openwrt-22.03`的是ipk安装包（也可以根据自己的路由 OpenWRT 版本修改）
 3. 到 actions 手动触发自动编译流程，注意需要填写 release，否则只编译不发布，参考下图：
  <img width="2727" height="866" alt="image" src="https://github.com/user-attachments/assets/24a55d1c-7937-4cef-87f8-cd8778b5f009" />
-
-#编译完成后在/opt/openwrt-sdk*/bin/packages/aarch64_generic/base目录里
-cd /opt/openwrt-sdk*/bin/packages/aarch64_generic/base
-#移动到/opt目录里
-mv *.ipk /opt/luci-app-easytier_all.ipk
-```
