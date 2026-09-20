@@ -105,7 +105,7 @@ jobs:
           mkdir -p release
           for dir in artifacts/*; do
             name=$(basename "$dir")
-            zip -j "release/EasyTier-${{ env.TAG }}-${name}.zip" "$dir"/*
+            zip -j "release/EasyTier-Web-${{ env.TAG }}-${name}.zip" "$dir"/*
           done
           echo "build_time=$(TZ=UTC-8 date '+%Y年%m月%d日%H:%M:%S' | jq -sRr @uri)" >> $GITHUB_ENV
 
