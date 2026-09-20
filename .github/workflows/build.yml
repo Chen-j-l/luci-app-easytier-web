@@ -120,7 +120,7 @@ jobs:
              - 其中 **`22.03.7`** 里面是ipk安装包 **`SNAPSHOT`** 里面是apk安装包
 
              - **`*.apk` 是OpenWrt新版的APK包** 对于apk包跳过证书命令
-             `apk add --allow-untrusted luci-app-easytier.apk`
+             `apk add --allow-untrusted luci-app-easytier-web.apk`
 
              ${{ github.event.inputs.text }}
            
