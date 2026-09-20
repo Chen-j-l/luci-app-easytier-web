@@ -1,6 +1,6 @@
 config easytierweb
 	option enabled '0'
-	option db_path '/etc/easytier/et.db'
+	option db_path '/etc/easytierweb/et.db'
 	option web_protocol 'udp'
 	option web_port '22020'
 	option api_port '11211'

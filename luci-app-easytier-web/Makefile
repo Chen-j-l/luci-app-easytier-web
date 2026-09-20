@@ -16,8 +16,13 @@ LUCI_PKGARCH:=all
 
 PKG_NAME:=luci-app-easytier-web
 
+define Package/$(PKG_NAME)/install
+	$(INSTALL_DIR) $(1)/etc/easytierweb
+endef
+
 define Package/$(PKG_NAME)/conffiles
 /etc/config/easytierweb
+/etc/easytierweb
 endef
 
 include $(TOPDIR)/feeds/luci/luci.mk
